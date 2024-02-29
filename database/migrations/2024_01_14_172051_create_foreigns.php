@@ -74,7 +74,7 @@ return new class extends Migration {
      */
     public function down(): void
     {
-       /* Schema::table('doctors', function (Blueprint $table) {
+        Schema::table('doctors', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
         });
 
@@ -92,6 +92,6 @@ return new class extends Migration {
 
         Schema::table('appointments', function (Blueprint $table) {
             $table->dropForeign(['med_card_id', 'record_type_id']);
-        });*/
+        });
     }
 };

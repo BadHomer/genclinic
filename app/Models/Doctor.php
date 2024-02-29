@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 class Doctor extends Model
 {
@@ -16,4 +17,9 @@ class Doctor extends Model
         'patronymic',
         'contact_information_id',
     ];
+
+    public function info(): MorphOne
+    {
+        return $this->morphOne(User::class, 'datable');
+    }
 }

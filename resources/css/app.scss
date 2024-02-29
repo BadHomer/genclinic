@@ -1,0 +1,332 @@
+@use 'sass:color';
+
+@import 'colors', 'fonts';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+    font-size: calc(1vw / 19.2)
+}
+
+body {
+    font-family: SF-Pro-Display, serif;
+    font-weight: normal;
+    background-color: $blue;
+    color: $white;
+}
+
+body::-webkit-scrollbar {
+    width: 0 !important
+}
+
+h1 {
+    @include h1;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+
+
+section {
+    margin: 50rem 20rem 120rem 20rem;
+
+    h2 {
+        @include h2;
+        margin-left: 51%;
+        margin-bottom: 30rem;
+    }
+}
+
+.hero {
+    h1 {
+        z-index: 1;
+        position: relative;
+    }
+
+    position: relative;
+
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    right: 125rem;
+    width: 825rem;
+    height: 390rem;
+}
+
+.hero-title-2 {
+    margin-right: 125rem;
+    text-align: right;
+}
+
+.hero-hot-line {
+    margin-top: 20rem;
+    @apply flex flex-col;
+    margin-left: 51%;
+
+    .hero-hot-line-text {
+        @include caption;
+        margin-bottom: 10rem;
+    }
+
+    a {
+        margin-bottom: 20rem;
+        @include txt3;
+    }
+
+    .btn-recording {
+        width: 300rem;
+    }
+}
+
+.primary-btn {
+    @include btn;
+    display: block;
+    padding: 13rem 28.5rem;
+    background-color: $white;
+    border-radius: 50rem;
+    text-transform: uppercase;
+    color: $blue;
+
+    &.more-btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 30rem;
+    }
+}
+
+.news {
+
+    .news-cards-container {
+
+        display: grid;
+        grid-template-columns: repeat(4, 455rem);
+        gap: 20rem;
+
+        div.news-card {
+            padding: 20rem;
+            background-color: $blue-dark;
+            box-shadow: inset 10rem 10rem 49rem 3rem rgba(255, 255, 255, 0.01);
+
+            &:nth-child(1) {
+                grid-column: span 2;
+
+                img {
+                    margin-left: 20rem;
+                    margin-right: 20rem;
+                    width: auto;
+                }
+            }
+
+            img {
+                margin-bottom: 10rem;
+                object-fit: fill;
+                width: 100%;
+                height: 295rem;
+            }
+
+            .news-card-title-date {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-bottom: 10rem;
+
+                h3 {
+                    @include txt2;
+                }
+
+                .news-card-date {
+                    @include caption;
+                    color: fade-out($white, 0.5);
+                }
+            }
+
+            & > p {
+                width: 415rem;
+                @include txt1;
+                min-height: 60rem;
+            }
+        }
+    }
+}
+
+
+.about-title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.about-main {
+    display: grid;
+    grid-template-columns: repeat(4, 455rem);
+
+    width: 100%;
+    column-gap: 20rem;
+
+    p {
+        @include txt1;
+    }
+
+    .about-hint {
+        @include description;
+        text-transform: uppercase;
+        text-wrap: none;
+
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    h2 {
+        margin: 0;
+        grid-column: 3/5;
+        grid-row: 1/2;
+    }
+
+    .about-col-3-4 {
+        @include txt3;
+        grid-column: 3/5;
+        grid-row: 2/3;
+    }
+
+    .about-col-2-3 {
+        @include txt2;
+        grid-column: 2/4;
+        grid-row: 3/4;
+        padding-bottom: 10rem;
+    }
+
+    .about-col-2-2 {
+        grid-column: 2/3;
+        grid-row: 4/5;
+    }
+
+    .about-col-3-3 {
+        grid-column: 3/4;
+        grid-row: 4/5;
+    }
+
+    .about-img-c {
+        padding-top: 35rem;
+        grid-column: 2/4;
+        grid-row: 5/6;
+        column-gap: 20rem;
+        display: grid;
+        grid-template-columns: repeat(4, 218rem);
+
+        img {
+            width: 218rem;
+            height: 225rem;
+        }
+
+        .about-main-big-img {
+            width: 455rem;
+            height: 400rem;
+            grid-column: 3/5;
+            grid-row: 1/3;
+        }
+    }
+}
+
+
+.specs {
+    .specs-container {
+        display: grid;
+        grid-template-columns: repeat(4, 455rem);
+        column-gap: 20rem;
+
+        .specs-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20rem;
+            background-color: $white;
+            background-image: url("/resources/images/arrow-up-right.svg");
+            background-repeat: no-repeat;
+            background-size: 30rem 30rem;
+            background-position: top 20rem right 20rem;
+
+            img {
+
+                object-fit: fill;
+                width: 100%;
+                height: 328rem;
+            }
+
+            h3 {
+                @include txt2;
+                color: $blue;
+                margin-bottom: 10rem;
+            }
+
+            .specs-specialization {
+                margin-bottom: 10rem;
+                @include caption;
+                color: fade-out($blue, 0.5);
+            }
+        }
+    }
+}
+
+footer {
+    padding: 20rem;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        border-bottom: 1rem solid fade-out($blue, 0.5);
+        .footer-navbar {
+            width: 100%;
+            padding: 10rem 495rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            grid-template-columns: 1fr auto 1fr;
+
+            .footer-navbar-item {
+                width: 218rem;
+                display: flex;
+                flex-direction: column;
+
+                p {
+                    text-align: center;
+                    @include caption;
+                    color: $blue;
+                }
+
+                .navbar-tel {
+                    @include txt2;
+                }
+            }
+
+            a {
+                @include link;
+                color: $blue;
+                text-transform: uppercase;
+            }
+        }
+
+        .footer-btn-recording {
+            max-width: 300rem;
+            color: $white;
+            background-color: $blue;
+            margin-bottom: 30rem;
+        }
+    }
+    & > a {
+        margin-top: 20rem;
+        @include link;
+        color: fade-out($blue, 0.5);
+        text-transform: uppercase;
+    }
+}
