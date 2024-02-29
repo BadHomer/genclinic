@@ -132,7 +132,7 @@ section h2 {
 }
 .news .news-cards-container div.news-card img {
   margin-bottom: 10rem;
-  object-fit: fill;
+  object-fit: cover;
   width: 100%;
   height: 295rem;
 }
@@ -252,7 +252,7 @@ section h2 {
   background-position: top 20rem right 20rem;
 }
 .specs .specs-container .specs-card img {
-  object-fit: fill;
+  object-fit: cover;
   width: 100%;
   height: 328rem;
 }
