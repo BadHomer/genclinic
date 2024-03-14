@@ -87,11 +87,14 @@ return new class extends Migration {
         });
 
         Schema::table('medical_histories', function (Blueprint $table) {
-            $table->dropForeign(['med_card_id', 'medical_history_status_id', 'doctor_id']);
+            $table->dropForeign(['medical_history_status_id']);
+             $table->dropForeign(['med_card_id']);
+              $table->dropForeign([ 'doctor_id']);
         });
 
         Schema::table('appointments', function (Blueprint $table) {
-            $table->dropForeign(['med_card_id', 'record_type_id']);
+            $table->dropForeign(['med_card_id']);
+            $table->dropForeign(['record_type_id']);
         });
     }
 };

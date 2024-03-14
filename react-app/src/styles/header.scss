@@ -1,0 +1,30 @@
+@import 'base';
+
+
+.header-navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-logo, .header-search{
+    width: 40rem;
+    height: 40rem;
+}
+
+header {
+    padding: 20rem;
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .header-navbar-item {
+        padding: 10rem;
+        margin-left: 65rem;
+        @include link;
+        color: $white;
+        text-transform: uppercase;
+    }
+}
+
+

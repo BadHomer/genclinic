@@ -1,0 +1,62 @@
+@import "../base";
+.specialists-card{
+    background-color: $blue-dark;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20rem 20rem 20rem 20rem;
+    margin-bottom: 20rem;
+    min-height: 475rem;
+    img {
+        width: 400rem;
+        object-fit: cover;
+    }
+
+}
+.specialists-card-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 950rem;
+    & > div > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 1rem solid rgba(255,255,255,0.5);
+    }
+}
+
+.specialists-card-infos-education-texts{
+    display: flex;
+    flex-direction: column;
+}
+.specialists-card-infos-name-spec {
+    padding-bottom: 20rem;
+    h2 {
+        max-width: 70%;
+        font-size: 50rem;
+        margin: 0;
+    }
+    p {
+        @include caption;
+    }
+
+}
+
+.specialists-card-infos-container {
+    padding: 10rem 0;
+    p {
+        align-self: flex-end;
+        text-align: right;
+        margin-bottom: 10rem;
+        @include txt2;
+
+    }
+    h3 {
+        width: 150rem;
+        margin-right: 200rem;
+        @include txt2;
+
+    }
+}

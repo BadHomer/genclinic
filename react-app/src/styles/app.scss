@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'colors', 'fonts';
+@import 'footer', 'header.css';
+
+html {
+    font-size: calc(1vw / 19.2)
+}
+
+body {
+    font-family: SF-Pro-Display, serif;
+    font-weight: normal;
+    background-color: $blue;
+    color: $white;
+    width: 100%;
+    flex-direction: column;
+    min-width: 100% !important;
+
+
+}
+
+h1.page-title {
+    margin-top: 50rem;
+    margin-bottom: 10rem;
+    text-align: center;
+}
+
+#root {
+    width: 100%;
+}
+
+body::-webkit-scrollbar {
+    width: 1rem !important;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: $blue-dark;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: $white;
+    border-radius: 20rem;
+    border: 3rem solid orange;
+}
+
+h1 {
+    @include h1;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+h2 {
+    @include h2;
+}
+
+section {
+    margin: 50rem 20rem 120rem 20rem;
+
+    h2 {
+        margin-left: 51%;
+        margin-bottom: 30rem;
+    }
+}
+
+.hero {
+    h1 {
+        z-index: 1;
+        position: relative;
+    }
+
+    position: relative;
+
+}
+
+
+.primary-btn {
+    @include btn;
+    display: block;
+    padding: 13rem 28.5rem;
+    background-color: $white;
+    border-radius: 50rem;
+    text-transform: uppercase;
+    color: $blue;
+
+    &:hover {
+
+        box-shadow: inset -2.5rem 5rem 5rem rgba(0, 0, 0, 25%);
+    }
+
+    &.more-btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 30rem;
+    }
+}
+
+
+
+
+

@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('warframe');
+    return view('index');
+});
+
+Route::get('/specs', function () {
+    return view('specs');
 });

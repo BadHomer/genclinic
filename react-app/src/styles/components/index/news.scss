@@ -1,0 +1,65 @@
+@import "../../base";
+.news {
+
+    .news-cards-container {
+
+        display: grid;
+        grid-template-columns: repeat(4, 455rem);
+        gap: 20rem;
+
+        div.news-card {
+            padding: 20rem;
+            background-color: $blue-dark;
+            box-shadow: inset 10rem 10rem 49rem 3rem rgba(255, 255, 255, 0.01);
+
+            transition-duration: 0.2s;
+
+            &:nth-child(5n - 4) {
+                grid-column: span 2;
+
+                img {
+                    cursor: pointer;
+                    margin-left: 20rem;
+                    margin-right: 20rem;
+                    width: auto;
+                }
+            }
+
+            img {
+
+                margin-bottom: 10rem;
+                object-fit: cover;
+                width: 100%;
+                height: 295rem;
+            }
+
+            .news-card-title-date {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-bottom: 10rem;
+
+                h3 {
+                    @include txt2;
+                }
+
+                .news-card-date {
+                    @include caption;
+                    color: fade-out($white, 0.5);
+                }
+            }
+
+            & > p {
+                width: 415rem;
+                @include txt1;
+                min-height: 60rem;
+            }
+
+            &:hover {
+                background-color: $card-blue-hover;
+                transform: scale(1.05);
+
+            }
+        }
+    }
+}

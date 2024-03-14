@@ -1,0 +1,55 @@
+@import "../../base";
+
+.specs {
+    .specs-container {
+        display: grid;
+        grid-template-columns: repeat(4, 455rem);
+        column-gap: 20rem;
+
+        .specs-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20rem;
+            background-color: $white;
+            color: $blue;
+            background-image: url("@/assets/images/arrow-up-right-blue.svg");
+            background-repeat: no-repeat;
+            background-size: 30rem 30rem;
+            background-position: top 20rem right 20rem;
+
+            transition-duration: 0.2s;
+
+            img {
+                cursor: pointer;
+                object-fit: cover;
+                width: 100%;
+                height: 328rem;
+            }
+
+            h3 {
+                @include txt2;
+
+                margin-bottom: 10rem;
+                margin-right: 50rem;
+            }
+
+            .specs-specialization {
+                margin-bottom: 10rem;
+                @include caption;
+                color: fade-out($blue, 0.5);
+            }
+
+            &:hover {
+                background-image: url("@/assets/images/arrow-up-right-white.svg");
+                transform: scale(1.05);
+                border : 1rem solid $white;
+                background-color: $card-blue-hover;
+                color: $white;
+                .specs-specialization {
+                    color: fade-out($white, 0.5);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,206 @@
+@import 'header.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: SF-Pro-Display;
+  src: url("../assets/fonts/SF-Pro-Display-Regular.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: SF-Pro-Display;
+  src: url("../assets/fonts/SF-Pro-Display-Medium.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: SF-Pro-Display;
+  src: url("../assets/fonts/SF-Pro-Display-Semibold.otf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: SF-Pro-Display;
+  src: url("../assets/fonts/SF-Pro-Display-Regular.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: SF-Pro-Display;
+  src: url("../assets/fonts/SF-Pro-Display-Medium.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: SF-Pro-Display;
+  src: url("../assets/fonts/SF-Pro-Display-Semibold.otf");
+  font-weight: 600;
+  font-style: normal;
+}
+footer {
+  padding: 20rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer .footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1rem solid rgba(18, 49, 127, 0.5);
+}
+footer .footer-container .footer-navbar {
+  width: 100%;
+  padding: 10rem 495rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  grid-template-columns: 1fr auto 1fr;
+}
+footer .footer-container .footer-navbar .footer-navbar-item {
+  width: 218rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+footer .footer-container .footer-navbar .footer-navbar-item p {
+  text-align: center;
+  align-self: center;
+  font-size: 20rem;
+  line-height: normal;
+  font-weight: 400;
+  color: #12317F;
+}
+footer .footer-container .footer-navbar .footer-navbar-item .navbar-tel {
+  font-size: 24rem;
+  line-height: 120%;
+  font-weight: 500;
+}
+footer .footer-container .footer-navbar div.footer-navbar-item:nth-child(1) {
+  align-items: flex-end;
+}
+footer .footer-container .footer-navbar a {
+  font-size: 16rem;
+  line-height: normal;
+  font-weight: 400;
+  color: #12317F;
+  text-transform: uppercase;
+}
+footer .footer-container .footer-navbar a:after {
+  background-color: #12317F;
+}
+footer .footer-container .footer-btn-recording {
+  max-width: 300rem;
+  color: white;
+  background-color: #12317F;
+  margin-bottom: 30rem;
+}
+footer .footer-container .footer-btn-recording:hover {
+  box-shadow: none;
+  background-color: #1E3E8F;
+}
+footer > a {
+  margin-top: 20rem;
+  font-size: 16rem;
+  line-height: normal;
+  font-weight: 400;
+  color: rgba(18, 49, 127, 0.5);
+  text-transform: uppercase;
+  transition: color 0.2s ease-in-out;
+}
+footer > a:hover {
+  color: #12317F;
+}
+
+html {
+  font-size: 0.0520833333vw;
+}
+
+body {
+  font-family: SF-Pro-Display, serif;
+  font-weight: normal;
+  background-color: #12317F;
+  color: white;
+  width: 100%;
+  flex-direction: column;
+  min-width: 100% !important;
+}
+
+h1.page-title {
+  margin-top: 50rem;
+  margin-bottom: 10rem;
+  text-align: center;
+}
+
+#root {
+  width: 100%;
+}
+
+body::-webkit-scrollbar {
+  width: 1rem !important;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #112C70;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20rem;
+  border: 3rem solid orange;
+}
+
+h1 {
+  font-size: 150rem;
+  line-height: 100%;
+  font-weight: 500;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 64rem;
+  line-height: 90%;
+  font-weight: 500;
+}
+
+section {
+  margin: 50rem 20rem 120rem 20rem;
+}
+section h2 {
+  margin-left: 51%;
+  margin-bottom: 30rem;
+}
+
+.hero {
+  position: relative;
+}
+.hero h1 {
+  z-index: 1;
+  position: relative;
+}
+
+.primary-btn {
+  font-size: 20rem;
+  line-height: normal;
+  font-weight: 600;
+  display: block;
+  padding: 13rem 28.5rem;
+  background-color: white;
+  border-radius: 50rem;
+  text-transform: uppercase;
+  color: #12317F;
+}
+.primary-btn:hover {
+  box-shadow: inset -2.5rem 5rem 5rem rgba(0, 0, 0, 0.25);
+}
+.primary-btn.more-btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 30rem;
+}
+
+/*# sourceMappingURL=app.css.map */

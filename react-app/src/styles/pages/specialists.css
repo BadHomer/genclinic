@@ -1,0 +1,85 @@
+@font-face {
+  font-family: SF-Pro-Display;
+  src: url("../assets/fonts/SF-Pro-Display-Regular.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: SF-Pro-Display;
+  src: url("../assets/fonts/SF-Pro-Display-Medium.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: SF-Pro-Display;
+  src: url("../assets/fonts/SF-Pro-Display-Semibold.otf");
+  font-weight: 600;
+  font-style: normal;
+}
+.specialists-card {
+  background-color: #112C70;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20rem 20rem 20rem 20rem;
+  margin-bottom: 20rem;
+  min-height: 475rem;
+}
+.specialists-card img {
+  width: 400rem;
+  object-fit: cover;
+}
+
+.specialists-card-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 950rem;
+}
+.specialists-card-infos > div > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1rem solid rgba(255, 255, 255, 0.5);
+}
+
+.specialists-card-infos-education-texts {
+  display: flex;
+  flex-direction: column;
+}
+
+.specialists-card-infos-name-spec {
+  padding-bottom: 20rem;
+}
+.specialists-card-infos-name-spec h2 {
+  max-width: 70%;
+  font-size: 50rem;
+  margin: 0;
+}
+.specialists-card-infos-name-spec p {
+  font-size: 20rem;
+  line-height: normal;
+  font-weight: 400;
+}
+
+.specialists-card-infos-container {
+  padding: 10rem 0;
+}
+.specialists-card-infos-container p {
+  align-self: flex-end;
+  text-align: right;
+  margin-bottom: 10rem;
+  font-size: 24rem;
+  line-height: 120%;
+  font-weight: 500;
+}
+.specialists-card-infos-container h3 {
+  width: 150rem;
+  margin-right: 200rem;
+  font-size: 24rem;
+  line-height: 120%;
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=specialists.css.map */

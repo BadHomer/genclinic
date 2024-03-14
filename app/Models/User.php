@@ -22,4 +22,6 @@ class User extends Model
     protected $casts = [
         'birthday' => 'datetime',
     ];
+
+
 }
