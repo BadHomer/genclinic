@@ -11,7 +11,7 @@ export function IndexSpecs() {
                 <h2>Специалисты</h2>
                 <div className="specs-container">
                     {specialists.slice(0,4).map(
-                        specialist => <IndexSpecsCard specialist={specialist}/>
+                        specialist => <IndexSpecsCard key={specialist.id} specialist={specialist}/>
                     )}
 
                 </div>

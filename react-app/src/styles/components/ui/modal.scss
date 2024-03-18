@@ -1,0 +1,43 @@
+@import '@/styles/_base.scss';
+.modal-backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-container {
+    width: 800rem;
+    background-color: $white;
+    padding: 20px;
+    color: $blue;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    border-bottom: 1px solid $blue-light;
+    padding-bottom: 10px;
+    button {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    svg {
+        width: 40rem;
+        height: 40rem;
+        align-self: flex-start;
+    }
+    h2 {
+        margin-top: 20px;
+    }
+}

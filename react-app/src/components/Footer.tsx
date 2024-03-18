@@ -1,6 +1,9 @@
 import "@/styles/footer.scss"
+import {useState} from "react";
+import {Button} from "@/components/ui/Button";
 
 export function Footer() {
+    const [, setOpenRecordModal] = useState(false);
     return (
         <>
             <footer>
@@ -19,9 +22,9 @@ export function Footer() {
                             <a href="/contacts">Контакты</a>
                         </div>
                     </div>
-                    <button className="primary-btn btn-recording footer-btn-recording">Записаться на прием</button>
+                    <Button classes={"primary-btn btn-recording footer-btn-recording"} onClick={()=> {setOpenRecordModal(true)}}>Записаться на прием</Button>
                 </div>
-                <a href="static">Политика конфиденциальности</a>
+                <a href="/">Политика конфиденциальности</a>
             </footer>
 
         </>

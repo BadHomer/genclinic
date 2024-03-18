@@ -7,9 +7,17 @@ import aboutImg1 from "@/assets/images/indexPage/about-img-1.jpg";
 import aboutImg2 from "@/assets/images/indexPage/about-img-2.jpg";
 import aboutImg3 from "@/assets/images/indexPage/about-img-3.jpg";
 import mainHero from '@/assets/images/indexPage/main-hero.jpg';
+import {Modal} from "@/components/ui/Modal";
+import {Button} from "@/components/ui/Button";
+import {useAppDispatch} from "@/core/hooks/storeHooks";
+import {openModal} from "@/core/store/recordModalState/recordModalStateReducer";
 
 export function IndexPage() {
+
+    const dispatch = useAppDispatch();
+
     document.title = 'Городская клиническая больница';
+    console.log(open);
     return (
         <>
             <section className="hero">
@@ -19,10 +27,7 @@ export function IndexPage() {
                 <div className="hero-hot-line">
                     <p className="hero-hot-line-text">Горячая линия</p>
                     <a href="tel:">+7 (977) 407-10-45</a>
-                    <button
-                        className="primary-btn btn-recording">
-                        Записаться на прием
-                    </button>
+                    <Button classes={'primary-btn btn-recording'} onClick={()=> {dispatch(openModal())}}>Записаться на прием</Button>
                 </div>
             </section>
 
@@ -60,6 +65,7 @@ export function IndexPage() {
                 </div>
             </section>
 
+            <Modal> 1</Modal>
             <IndexSpecs />
         </>
     );

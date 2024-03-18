@@ -4,15 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\DoctorResource;
 use App\Models\Doctor;
+use App\Services\DoctorService;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
 {
+    private DoctorService $doctorService;
+
+    public function __construct()
+    {
+        $this->doctorService = new DoctorService();
+    }
+
     public function index()
     {
-        $this->authorize('viewAny', Doctor::class);
+        $doctors = $this->doctorService->getAll();
 
-        return DoctorResource::collection(Doctor::all());
+        return response(['doctors' => $doctors]);
     }
 
     public function store(Request $request)
@@ -30,11 +38,11 @@ class DoctorController extends Controller
         return new DoctorResource(Doctor::create($data));
     }
 
-    public function show(Doctor $doctor)
+    public function show(int $id)
     {
-        $this->authorize('view', $doctor);
-
-        return new DoctorResource($doctor);
+        //$this->authorize('view', $doctor);
+        $doctor = $this->doctorService->getById($id);
+        return response(['doctor' => $doctor]);
     }
 
     public function update(Request $request, Doctor $doctor)

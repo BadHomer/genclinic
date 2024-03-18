@@ -12,13 +12,9 @@ class DoctorResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
-            'last_name' => $this->last_name,
-            'speciality_id' => $this->speciality_id,
-            'patronymic' => $this->patronymic,
-            'contact_information_id' => $this->contact_information_id,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'name' => $this->info->getFullName(),
+            'educations' => EducationsResource::collection($this->educations),
+            'speciality' => $this->speciality->name,
         ];
     }
 }

@@ -10,7 +10,7 @@ export function SpecialistsPage() {
 
             <div className='specialists-container'>
                 {specialists.map(
-                    spec => <SpecialistsPageCard specialist={spec}/>
+                    spec => <SpecialistsPageCard key={spec.id} specialist={spec}/>
                 )}
             </div>
         </section>
