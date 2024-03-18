@@ -1,9 +1,12 @@
-import {news} from "@/mokData/news";
+
 import {IndexNewsCard} from "@/components/news/IndexNewsCard";
 import '@/styles/pages/news.scss';
+import {useGetNewsQuery} from "@/core/api/newsApi";
 
 export function NewsPage() {
     document.title = 'Новости';
+
+    const {data} = useGetNewsQuery(0);
 
     return (
         <>
@@ -12,7 +15,7 @@ export function NewsPage() {
 
 
                 <div className="news-cards-container">
-                    {news.map(
+                    {data?.news.map(
                         newsItem => <IndexNewsCard newsItem={newsItem} key={newsItem.id}/>
 
                     )}

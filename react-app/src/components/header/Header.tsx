@@ -1,5 +1,5 @@
 import '@/styles/header.scss'
-import logo from '@/assets/images/header/plus.svg'
+import logo from '@/assets/images/header/logo.svg'
 import {HeaderNavBar} from "@/components/header/HeaderNavBar";
 
 export function Header() {

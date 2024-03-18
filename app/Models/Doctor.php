@@ -14,7 +14,7 @@ class Doctor extends Model
 
     protected $fillable = [
         'speciality_id',
-
+        'photo_path'
 
     ];
 

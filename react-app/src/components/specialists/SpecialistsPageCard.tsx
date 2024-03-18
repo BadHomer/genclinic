@@ -2,7 +2,6 @@ import tempImg from "@/assets/images/indexPage/news-temp.jpg";
 import {ISpecialistsItem} from "@/core/entities/ISpecialistsItem";
 
 
-
 export function SpecialistsPageCard(props: { specialist: ISpecialistsItem }) {
     const specialist = props.specialist;
     return (
@@ -12,14 +11,17 @@ export function SpecialistsPageCard(props: { specialist: ISpecialistsItem }) {
                     <div>
                         <div className='specialists-card-infos-name-spec'>
                             <h2>{specialist.name}</h2>
-                            <p>{specialist.specialization}</p>
+                            <p>{specialist.speciality}</p>
                         </div>
 
                         <div className='specialists-card-infos-container'>
                             <h3>Образование:</h3>
-                            <div  className={'specialists-card-infos-education-texts'}>
+                            <div className={'specialists-card-infos-education-texts'}>
                                 {specialist.educations.map(
-                                    education => <p>{education}</p>
+                                    education =>
+                                        <>
+                                            <p>{education.name} | {education.speciality}</p>
+                                        </>
                                 )}
                             </div>
                         </div>

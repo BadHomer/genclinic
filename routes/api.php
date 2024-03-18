@@ -26,14 +26,18 @@ Route::group(['controller' => AuthenticationController::class], static function 
     Route::get('/logout', 'logout');
 });
 
-Route::group(['controller' => DoctorController::class], static function () {
-   Route::get('/doctors', 'index');
-   Route::get('/doctors/show/{id}', 'show');
+Route::group(['controller' => DoctorController::class, 'prefix' => '/doctors'], static function () {
+    Route::get('/', 'index');
+    Route::get('/show/{id}', 'show');
+    Route::post('/create', 'store');
+    Route::post('/update/{id}', 'update');
+    Route::delete('/delete/{id}', 'destroy');
 });
 
-Route::group(['controller' => NewsController::class], static function () {
-    Route::get('/news', 'index');
-    Route::get('/news/show/{id}', 'show');
-    Route::post('/news/create', 'store');
-    Route::post('/news/update/{id}', 'update');
+Route::group(['controller' => NewsController::class, 'prefix' => '/news'], static function () {
+    Route::get('/', 'index');
+    Route::get('/show/{id}', 'show');
+    Route::post('/create', 'store');
+    Route::post('/update/{id}', 'update');
+    Route::delete('/delete/{id}', 'destroy');
 });

@@ -30,7 +30,12 @@
 .specialists-card-infos-education-texts{
     display: flex;
     flex-direction: column;
+    .speciality {
+        @include txt1;
+    }
 }
+
+
 .specialists-card-infos-name-spec {
     padding-bottom: 20rem;
     h2 {

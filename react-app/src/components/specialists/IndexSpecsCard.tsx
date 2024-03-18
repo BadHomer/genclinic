@@ -7,7 +7,7 @@ export function IndexSpecsCard(props: { specialist : ISpecialistsItem}) {
         <>
             <div className="specs-card">
                 <h3>{props.specialist.name}</h3>
-                <p className="specs-specialization">{props.specialist.specialization}</p>
+                <p className="specs-specialization">{props.specialist.speciality}</p>
                 <img src={specialist.photoPath ? specialist.photoPath : tempImg}/>
             </div>
         </>

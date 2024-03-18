@@ -14,9 +14,9 @@ class NewsResource extends JsonResource
 
             'id' => $this->id,
             'title' => $this->title,
-            'img_path' => $this->img_path,
+            'img_path' => config('app.url') . $this->img_path,
             'text' => $this->text,
-            'created_at' => $this->created_at->format('d-m-y H:i'),
+            'created_at' => $this->created_at->format('d.m.y H:i'),
         ];
     }
 

@@ -42,4 +42,9 @@ class NewsService
 
         return new NewsResource($news);
     }
+
+    public function delete(int $id)
+    {
+        return News::findOrFail($id)->delete();
+    }
 }

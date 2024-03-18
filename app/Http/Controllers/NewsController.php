@@ -6,6 +6,7 @@ use App\Http\Requests\NewsRequest;
 use App\Http\Resources\NewsResource;
 use App\Models\News;
 use App\Services\NewsService;
+use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
@@ -38,7 +39,7 @@ class NewsController extends Controller
     {
         $news = $this->newsService->getById($id);
 
-        return response(['news' => $news]);
+        return response()->json(['news' => $news]);
     }
 
     public function update(NewsRequest $request, int $id)
@@ -52,12 +53,15 @@ class NewsController extends Controller
         return response(['news' => new NewsResource($news)]);
     }
 
-    public function destroy(News $news)
+    public function destroy(Request $request, int $id)
     {
-        $this->authorize('delete', $news);
 
-        $news->delete();
+        if ($request->user('sanctum')->can('update', News::class)) {
+            $isDeleted = $this->newsService->delete($id);
+        } else {
+            return response('Unauthorized', 403);
+        }
 
-        return response()->json();
+        return $isDeleted ? response(['status' => 'success']) : response(['status' => 'error', 'error' => ['news.id' => 'unknown id']], 423);
     }
 }

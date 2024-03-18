@@ -48,6 +48,11 @@
   display: flex;
   flex-direction: column;
 }
+.specialists-card-infos-education-texts .speciality {
+  font-size: 16rem;
+  line-height: 120%;
+  font-weight: 400;
+}
 
 .specialists-card-infos-name-spec {
   padding-bottom: 20rem;

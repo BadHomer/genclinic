@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DoctorRequest;
 use App\Http\Resources\DoctorResource;
 use App\Models\Doctor;
 use App\Services\DoctorService;
@@ -18,56 +19,37 @@ class DoctorController extends Controller
 
     public function index()
     {
-        $doctors = $this->doctorService->getAll();
+        $doctorCollectionResource = $this->doctorService->getAll();
 
-        return response(['doctors' => $doctors]);
+        return response(['specs' => $doctorCollectionResource]);
     }
 
-    public function store(Request $request)
+    public function store(DoctorRequest $request)
     {
-        $this->authorize('create', Doctor::class);
+        $doctorResource = $this->doctorService->create($request->validated(), $request->file('photo_path'));
 
-        $data = $request->validate([
-            'name' => ['required'],
-            'last_name' => ['required'],
-            'speciality_id' => ['required', 'integer'],
-            'patronymic' => ['required'],
-            'contact_information_id' => ['required', 'integer'],
-        ]);
+        return response(['doctor' => $doctorResource]);
 
-        return new DoctorResource(Doctor::create($data));
     }
 
     public function show(int $id)
     {
-        //$this->authorize('view', $doctor);
-        $doctor = $this->doctorService->getById($id);
-        return response(['doctor' => $doctor]);
+        $doctorResource = $this->doctorService->getById($id);
+
+        return response(['doctor' => $doctorResource]);
     }
 
-    public function update(Request $request, Doctor $doctor)
+    public function update(DoctorRequest $request, int $id)
     {
-        $this->authorize('update', $doctor);
+        $doctorResource = $this->doctorService->update($id, $request->validated(), $request->file('photo_path'));
 
-        $data = $request->validate([
-            'name' => ['required'],
-            'last_name' => ['required'],
-            'speciality_id' => ['required', 'integer'],
-            'patronymic' => ['required'],
-            'contact_information_id' => ['required', 'integer'],
-        ]);
-
-        $doctor->update($data);
-
-        return new DoctorResource($doctor);
+        return response(['doctor' => $doctorResource]);
     }
 
-    public function destroy(Doctor $doctor)
+    public function destroy(int $id)
     {
-        $this->authorize('delete', $doctor);
+        $this->doctorService->delete($id);
 
-        $doctor->delete();
-
-        return response()->json();
+        return response(['status'=> 'success']);
     }
 }

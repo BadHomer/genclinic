@@ -1,8 +1,13 @@
 export interface ISpecialistsItem {
     id : number,
     name: string,
-    specialization: string,
-    educations: Array<string>,
+    speciality: string,
+    educations: Array<IEducation>,
     workExperience: number,
     photoPath: string
+}
+
+interface IEducation {
+    name: string,
+    speciality: string,
 }
