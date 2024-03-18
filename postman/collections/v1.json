@@ -1,0 +1,456 @@
+{
+	"info": {
+		"_postman_id": "3232978f-028b-4e4d-817e-b125e0a82b83",
+		"name": "v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "29393435-3232978f-028b-4e4d-817e-b125e0a82b83"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"id": "81f33eb6-210d-45a5-bf20-c76272d2d71a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "login",
+									"value": "login",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"id": "ab3f9a12-2a62-4765-aebc-9ae53c1157c4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/logout",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registration",
+					"id": "fd3fe36c-2b43-4aef-8f76-8ca999b8a921",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Vlad",
+									"type": "text"
+								},
+								{
+									"key": "second_name",
+									"value": "Bespalov",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Vladimirovich",
+									"type": "text"
+								},
+								{
+									"key": "sex",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "ul.Voroshilova",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "89612829663",
+									"type": "text"
+								},
+								{
+									"key": "birthday",
+									"value": "15.08.2002",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "bespalov.vv2002@yandex.ru",
+									"type": "text"
+								},
+								{
+									"key": "login",
+									"value": "login",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "snils",
+									"value": "131313132132",
+									"type": "text"
+								},
+								{
+									"key": "passport",
+									"value": "13132",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "8b543993-f4e2-4d1b-ab54-14fedcb64661"
+		},
+		{
+			"name": "Doctors endpoints",
+			"item": [
+				{
+					"name": "Get all doctors",
+					"id": "c910d33a-3d3d-4056-a1c5-f2471181eb2d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/doctors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"doctors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get doctor by id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "91628159-6212-4d5a-a5f2-33a7eec6ec66",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "6e5bfc18-cd79-40cd-bad3-d85e965eaf85",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/doctors/show/{{doctorId}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"doctors",
+								"show",
+								"{{doctorId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create doctor",
+					"id": "77fad708-00f4-4980-95b6-79b7ab90e486",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "0e474a6d-2f01-4b16-bb9d-193895dde7fb"
+		},
+		{
+			"name": "News endpoints",
+			"item": [
+				{
+					"name": "Get all news",
+					"id": "14c428f0-017a-4bc3-892b-a85a893fcbd6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/news",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get news by id",
+					"id": "b7c4b899-ee64-4e07-8379-727fcf570e26",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/news/show/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"news",
+								"show",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store news",
+					"id": "1e127c5f-0631-47ae-be80-99cc07a76fb2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{doctorToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "News Title",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"type": "file",
+									"fileNotInWorkingDirectoryWarning": "This file isn't in your working directory. Teammates you share this request with won't be able to use this file. To make collaboration easier you can setup your working directory in Settings.",
+									"filesNotInWorkingDirectory": [
+										"/C:/Users/bespa/WebProjects/gena_clinic/react-app/src/assets/images/indexPage/news-temp.jpg"
+									],
+									"src": "postman-cloud:///1eee4c9b-4e91-4e40-8b55-563a68251c72"
+								},
+								{
+									"key": "text",
+									"value": "Some text text text text text text text text text text text text text text text text\ntext text text text\ntext text text text",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/news/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"news",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update news",
+					"id": "997903fa-d4d9-4587-a8c1-d3e62dbe0438",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{doctorToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "News",
+									"type": "text"
+								},
+								{
+									"key": "text",
+									"value": "Some text text text text text text text text text text text text text text text text\ntext text text text\ntext text text text",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"type": "file",
+									"src": "postman-cloud:///1eee4c9b-4e91-4e40-8b55-563a68251c72",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/news/update/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"news",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete news",
+					"id": "074c5e63-6f19-41f3-82f6-dab65cf98065",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "6aa08cb8-77db-4cd5-baa9-5425aeb2667e"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{patientToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3c9a772d-ee8b-4ce6-adde-bb9bbdbb036c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "1fd32b7c-798f-4cd0-94e8-2ecc4b21b9a6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "53f78840-dcd3-4ba3-8e93-1b2d3e947df1",
+			"key": "doctorId",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
